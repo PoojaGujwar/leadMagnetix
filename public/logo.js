@@ -1,0 +1,1 @@
+export const logoImage = "https://png.pngtree.com/png-clipart/20200709/original/pngtree-letter-l-logo-template-design-png-image_3577019.jpg"
