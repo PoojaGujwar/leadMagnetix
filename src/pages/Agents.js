@@ -23,6 +23,7 @@ export default function Agents() {
         </div>
         <div className="col-md-8 py-3">
         <h1 className="text-center">Sales Agents Management</h1>
+        
           <div className="row mt-4">
             {agents?.length > 0 &&
               agents.map((agent) => (

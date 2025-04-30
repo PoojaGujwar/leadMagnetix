@@ -8,7 +8,7 @@ export default function Sales() {
   const {agents,leads} = useSelector((state)=>state.leads)
   const dispatch = useDispatch()
   const [leadData,setLeadData] = useState(leads||'')
-  console.log(leads)
+   
   useEffect(()=>{
     dispatch(salesAgentsAsync())
     dispatch(fetchLead())

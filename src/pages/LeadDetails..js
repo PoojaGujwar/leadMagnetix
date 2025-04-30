@@ -38,13 +38,14 @@ export default function LeadDetails({onClose}) {
  
   return (
     <>
-    <div className="row">
-      
+    <div className="row"> 
       <div className="col-md-3 col-lg-3 px-5 py-2" style={{ backgroundColor: "#ffead9" }}>
         <NavLink to="/">Back to Dashboard</NavLink>
       </div>
       <div className="col-md-9">
         <h1>Lead Details {filterdLead.name}</h1>
+        {status ==="Loading" && <p>Loading...</p>}
+        {error && <p>{error}</p>}
         <div className="card" style={{ backgroundColor: "#ffead9" }}>
           <div className="card-body">
             <p>Lead Name: {filterdLead.name}</p>
