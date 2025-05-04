@@ -17,7 +17,7 @@ export default function Agents() {
       
       <div className="row">
         <div
-        className="col-md-3 col-lg-3 px-5 py-3" style={{backgroundColor:"#ffead9"}}
+        className="col-md-3 col-lg-3 px-5 py-3" style={{backgroundColor:"#bbdefb"}}
         >
           <NavLink to="/">Back to Dashboard</NavLink>
         </div>
@@ -30,7 +30,7 @@ export default function Agents() {
                 <div className="col-md-4">
                   <div
                     className="card mb-3"
-                    style={{ backgroundColor: "#ffead9" }}
+                    style={{ backgroundColor:"#e3f2fd",border:"none"}}
                   >
                     <div className="card-body">
                       <p>Name: {agent.name}</p>
@@ -40,12 +40,13 @@ export default function Agents() {
                 </div>
               ))}
           </div>
-          <NavLink
+          <button
+          type="button"
             className="btn btn-primary"
             onClick={() => setShowValue(true)}
           >
-            +Add New Agent
-          </NavLink>
+            Add New Agent
+          </button>
           {showValue && <AddAgent onClose={()=>setShowValue(false)}/>}
         </div>
       </div>

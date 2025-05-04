@@ -62,13 +62,14 @@ export default function Reports() {
   }, {});
   const ans = Object.keys(calculateStatus);
   const ans1 = Object.values(calculateStatus);
-  console.log(ans, ans1);
+
+
   return (
     <div>
       <div className="row">
         <div
           className="col-md-3 col-lg-3 px-5 py-2"
-          style={{ backgroundColor: "#ffead9" }}
+          style={{backgroundColor:"#bbdefb"}}
         >
           <NavLink to="/">Back to Dashboard</NavLink>
         </div>

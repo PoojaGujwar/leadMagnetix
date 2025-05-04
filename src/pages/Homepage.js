@@ -33,16 +33,16 @@ export default function Homepage() {
     <>
     <div className="h-screen flex flex-col items-center">
         <div className="row">
-        <div className="col-md-3 col-lg-3 px-5 py-2" style={{backgroundColor:"#FFC78F"}}>
+        <div className="col-md-3 col-lg-3 px-5 py-2" style={{backgroundColor:"#bbdefb"}}>
           <Sidebar/>
         </div>
         <div className="col-md-8 py-2">
           {status==="loading" && <p>Loading</p>}
           <div className="row">
           <div>
-            <NavLink onClick={()=>setShowValue(true)} className="btn btn-primary">+ Add Lead</NavLink>
+            <button onClick={()=>setShowValue(true)} className="btn text-white mt-2" style={{backgroundColor:"#2196f3",border:"none"}}> Add Lead</button>
           </div>
-          <div>
+          <div className="py-3">
           <input type="radio" name="status" onChange={()=>setAllLead(leads)} />  All
           <br/>
             <input type="radio" name="status" onChange={()=>dispatch(filterdLead("New"))} />  New
@@ -57,7 +57,7 @@ export default function Homepage() {
             <div className="col-md-4">
               <NavLink to="/leadDetails" state={{id:lead._id}}
               style={{textDecoration:"none"}}>
-              <div className="card mb-3" style={{backgroundColor:"#FFC78F"}}>
+              <div className="card mb-3" style={{backgroundColor:"#e3f2fd",border:"none"}}>
                 <div className="card-body">
                   
               <p className="">Name: {lead.name}</p>

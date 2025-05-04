@@ -29,6 +29,9 @@ export default function LeadDetails({onClose}) {
       setMessage("Comment is added")
       dispatch(leadCommentAsync(id))
       setComment('')
+      setTimeout(()=>{
+        setMessage('')
+      },2000)
     } else {
       setMessage("Please Enter comment");
     }
@@ -39,37 +42,41 @@ export default function LeadDetails({onClose}) {
   return (
     <>
     <div className="row"> 
-      <div className="col-md-3 col-lg-3 px-5 py-2" style={{ backgroundColor: "#ffead9" }}>
+      <div className="col-md-3 col-lg-3 px-5 py-2" style={{backgroundColor:"#bbdefb"}}>
         <NavLink to="/">Back to Dashboard</NavLink>
       </div>
-      <div className="col-md-9">
-        <h1>Lead Details {filterdLead.name}</h1>
+      <div className="col-md-8">
+        <h1 className="text-center py-3">Lead Details: {filterdLead.name}</h1>
         {status ==="Loading" && <p>Loading...</p>}
         {error && <p>{error}</p>}
-        <div className="card" style={{ backgroundColor: "#ffead9" }}>
+        <div className="card" style={{backgroundColor:"#e3f2fd"}}>
           <div className="card-body">
             <p>Lead Name: {filterdLead.name}</p>
             <p>Lead Source: {filterdLead.source}</p>
             <p>Lead Status: {filterdLead.status}</p>
             <p>Priority: {filterdLead.priority}</p>
             <p>Time to Close: {filterdLead.timeToClose}</p>
-            <NavLink
+            <button
               className="btn btn-primary"
               onClick={() => setShowValue(true)}
               state={{ id: filterdLead._id }}
             >
               Edit Lead
-            </NavLink>
-{message && <p>{message}</p>}
+            </button>
+            
+            <h3 className="py-3">Comment{leadComments.length>1?"s":''}</h3>
+            {message && <p>{message}</p>}
+            <ul className="list-group">
             {leadComments.length > 0 &&
-              leadComments.map((lead) => (
-                <div>
-                  <p>Author: {lead.author.name}</p>
-                  <p>Comments: {lead.commentText}</p>
-                </div>
+              leadComments.map((lead,index) => (
+                <li key={index} className="list-group-item">
+                  Author: {lead.author.name}<br/>
+                  Comments: {lead.commentText}
+                </li>
               ))}
-          </div>
-          <input
+              </ul>
+              <div>
+              <input
             type="text"
             placeholder="Add Comment"
             name="comment"
@@ -78,8 +85,11 @@ export default function LeadDetails({onClose}) {
             className ="form-control my-2"
           />
           <button className="btn btn-primary" onClick={handleSubmitBtn}>
-            +Add Comment
+            Add Comment
           </button>
+              </div>
+          </div>
+          
         </div>
         {showValue && <AddLead  onClose={()=>setShowValue(false)}/>}
       </div>

@@ -40,7 +40,7 @@ export default function Leads() {
       <div className="row">
         <div
           className="col-md-3 col-lg-3 px-5 py-2"
-          style={{ backgroundColor: "#ffead9" }}
+          style={{backgroundColor:"#bbdefb"}}
         >
           <NavLink to="/">Back to Dashboard</NavLink>
         </div>
@@ -72,7 +72,7 @@ export default function Leads() {
               
             </div>
             <div className="col mx-auto py-3">
-            <NavLink onClick={()=>setShowValue(true)} className="btn btn-primary w-100">+ Add Lead</NavLink>
+            <NavLink onClick={()=>setShowValue(true)} className="btn btn-primary w-100"> Add Lead</NavLink>
             </div>
           </div>
 
