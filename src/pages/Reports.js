@@ -73,13 +73,15 @@ export default function Reports() {
         >
           <NavLink to="/">Back to Dashboard</NavLink>
         </div>
-        <div className="col-md-8">
-          <h1 className="text-center"> Reports View </h1>
-          <div className="container mt-4">
-            <h3>Total Leads In Pipeline</h3>
-            <Pie data={data} style={{ width: "40%", height: "40%" }} />
+        <div className="col-md-8 py-3">
+          <h1 className="mb-3"> Reports Overview:  </h1>
+          <div className="d-flex flex-column ">
+            <div className="text-center mb-2" style={{ width: "400px", height: "500px", margin: "0 auto"  }}>
+            <h4>Total Leads In Pipeline</h4>
+            <Pie data={data} />
           </div>
-          <h3>Sales Agent Status is Closed</h3>
+          <div className="text-center mb-3" style={{ width: "500px", height: "400px", margin: "0 auto" }}>
+          <h4>Sales Agent Status is Closed</h4>
           <Bar
             data={{
               labels: labels,
@@ -91,8 +93,11 @@ export default function Reports() {
                 },
               ],
             }}
+           
           />
-          <h3>Lead Status</h3>
+          </div>
+          <div className=" text-center mb-2" style={{ width: "400px", height: "500px", margin: "0 auto" }}>
+          <h4>Lead Status</h4>
           <Pie
             data={{
               labels: ans,
@@ -120,9 +125,13 @@ export default function Reports() {
                 },
               ],
             }}
+            
           />
+          
+          </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
