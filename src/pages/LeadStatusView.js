@@ -43,7 +43,7 @@ export const LeadStatusView = () => {
       <div className="row">
         <div
           className="col-md-3 col-lg-3 px-5 py-2"
-          style={{ backgroundColor: "#bbdefb" }}
+          style={{ backgroundColor: "#bbdefb",height: "100vh" }}
         >
           <NavLink to="/">Back to Dashboard</NavLink>
         </div>
@@ -57,12 +57,12 @@ export const LeadStatusView = () => {
           </select>
           <div className="row">
             <div className="col-md-6 mb-3">
-              <div className="card h-100">
+              <div className="card h-100 shadow">
                 <div
                   className="card-header"
-                  style={{ backgroundColor: "#e3f2fd" }}
+                  style={{ backgroundColor: "#e3f2fd",border:"none" }}
                 >
-                  <h3>Status: new</h3>
+                  <h5>Status: new</h5>
                 </div>
                 <div className="card-body">
                   <ul>
@@ -79,12 +79,12 @@ export const LeadStatusView = () => {
               </div>
             </div>
             <div className="col-md-6 mb-3">
-              <div className="card h-100">
+              <div className="card h-100 shadow">
                 <div
                   className="card-header"
-                  style={{ backgroundColor: "#e3f2fd" }}
+                  style={{ backgroundColor: "#e3f2fd",border:"none" }}
                 >
-                  <h3>Status: Closed</h3>
+                  <h5>Status: Closed</h5>
                 </div>
                 <div className="card-body">
                   <ul>
@@ -101,12 +101,12 @@ export const LeadStatusView = () => {
               </div>
             </div>
             <div className="col-md-6 mb-3">
-              <div className="card h-100">
+              <div className="card h-100 shadow">
                 <div
                   className="card-header"
-                  style={{ backgroundColor: "#e3f2fd" }}
+                  style={{ backgroundColor: "#e3f2fd",border:"nonde" }}
                 >
-                  <h3>Status: Contacted</h3>
+                  <h5>Status: Contacted</h5>
                 </div>
                 <div className="card-body">
                   <ul>
@@ -123,12 +123,12 @@ export const LeadStatusView = () => {
               </div>
             </div>
             <div className="col-md-6 mb-3">
-              <div className="card h-100">
+              <div className="card h-100 shadow">
                 <div
                   className="card-header"
-                  style={{ backgroundColor: "#e3f2fd" }}
+                  style={{ backgroundColor: "#e3f2fd",border:"nonde" }}
                 >
-                  <h3>Status: Proposal Sent</h3>
+                  <h5>Status: Proposal Sent</h5>
                 </div>
                 <div className="card-body">
                   <ul>
@@ -145,12 +145,12 @@ export const LeadStatusView = () => {
               </div>
             </div>
             <div className="col-md-6 mb-3">
-              <div className="card h-100">
+              <div className="card h-100 shadow">
                 <div
                   className="card-header"
-                  style={{ backgroundColor: "#e3f2fd" }}
+                  style={{ backgroundColor: "#e3f2fd",border:"nonde" }}
                 >
-                  <h3>Status: Qualified</h3>
+                  <h5>Status: Qualified</h5>
                 </div>
                 <div className="card-body">
                   <ul>

@@ -42,7 +42,7 @@ export default function LeadDetails({onClose}) {
   return (
     <>
     <div className="row"> 
-      <div className="col-md-3 col-lg-3 px-5 py-2" style={{backgroundColor:"#bbdefb"}}>
+      <div className="col-md-3 col-lg-3 px-5 py-2" style={{backgroundColor:"#bbdefb",height: "100vh"}}>
         <NavLink to="/">Back to Dashboard</NavLink>
       </div>
       <div className="col-md-8">

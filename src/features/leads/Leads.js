@@ -83,7 +83,7 @@ export default function Leads() {
                 <div className="card mb-3">
                   <div
                     className="card-header"
-                    style={{ backgroundColor: "#ffead9" }}
+                    style={{ backgroundColor: "#e3f2fd" }}
                   >
                     <p>{lead.name}</p>
                   </div>
