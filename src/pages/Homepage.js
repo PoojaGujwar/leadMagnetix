@@ -28,12 +28,11 @@ export default function Homepage() {
 
   return (
     <>
-      <div className="h-screen flex flex-col items-center">
+      <div className="h-screen flex flex-col items-center" style={{height:"100vh"}}>
         <div className="row">
           <div
             className="col-md-3 col-lg-3 px-5 py-2"
             style={{ backgroundColor: "#bbdefb", 
-              height: "100vh",
               top: 0,
               overflowY: "auto", }}
           >
