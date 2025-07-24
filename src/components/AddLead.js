@@ -95,7 +95,7 @@ export default function AddLead({ onClose}) {
       <div>
         <form
           onSubmit={handleForm}
-          style={{ backgroundColor: "#ffead9", padding: "20px" }}
+          style={{ backgroundColor: "#bbdefb", padding: "20px" }}
         >
           <button type="button" onClick={onClose} className="close-icon">
             <X />
