@@ -10,6 +10,7 @@ import Headers from "../components/Header";
 export default function Homepage() {
   const dispatch = useDispatch();
   const [showValue, setShowValue] = useState(false);
+  const [selectedStatus, setSelectedStatus] = useState("All");
   const { leads, status, error } = useSelector((state) => state.leads);
   const filteredLeads = useSelector((state) => state.leads.filteredLeads);
   const [allLead, setAllLead] = useState([]);
@@ -19,12 +20,21 @@ export default function Homepage() {
   }, [showValue]);
 
   useEffect(() => {
-    if (filteredLeads && filteredLeads.length > 0) {
+    if(selectedStatus === "All"){
+      setAllLead(leads)
+    }else{
       setAllLead(filteredLeads);
-    } else {
-      setAllLead(leads);
     }
-  }, [filteredLeads, leads]);
+  }, [filteredLeads, leads, selectedStatus]);
+
+  const handleRadioButton =(value)=>{
+    setSelectedStatus(value)
+    if(value === "All"){
+      setAllLead(leads);
+    }else{
+      dispatch(filterdLead(value))
+    }
+  }
 
   return (
     <>
@@ -34,6 +44,7 @@ export default function Homepage() {
             className="col-md-3 col-lg-3 px-5 py-2"
             style={{ backgroundColor: "#bbdefb", 
               top: 0,
+              minHeight:"100vh",
               overflowY: "auto", }}
           >
             <Sidebar />
@@ -55,21 +66,28 @@ export default function Homepage() {
                 <input
                   type="radio"
                   name="status"
-                  onChange={() => setAllLead(leads)}
+                  value="All"
+                  checked={selectedStatus === "All"}
+                  onChange={(e) => handleRadioButton(e.target.value)}
+                    
                 />{" "}
                 All
                 <br />
                 <input
                   type="radio"
                   name="status"
-                  onChange={() => dispatch(filterdLead("New"))}
+                  checked={selectedStatus === "New"}
+                  onChange={(e) =>handleRadioButton(e.target.value) }
+                  value="New"
                 />{" "}
                 New
                 <br />
                 <input
                   type="radio"
                   name="status"
-                  onChange={() => dispatch(filterdLead("Contacted"))}
+                  onChange={(e) =>handleRadioButton(e.target.value)}
+                  checked={selectedStatus === "Contacted"}
+                value="Contacted"
                 />{" "}
                 Contacted
                 <br />
