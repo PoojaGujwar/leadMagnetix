@@ -87,7 +87,7 @@ export default function Homepage() {
                     >
                       <div
                         className="card mb-3"
-                        style={{ backgroundColor: "#e3f2fd", border: "none" }}
+                        style={{ backgroundColor: "#bbdefb", border: "none" }}
                       >
                         <div className="card-body">
                           <p className="">Name: {lead.name}</p>
