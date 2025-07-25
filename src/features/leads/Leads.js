@@ -36,11 +36,11 @@ export default function Leads() {
     }
   };
   return (
-    <div>
+    <div style={{minHeight: "100vh"}}>
       <div className="row">
         <div
           className="col-md-3 col-lg-3 px-5 py-2"
-          style={{backgroundColor:"#bbdefb"}}
+          style={{backgroundColor:"#bbdefb", minHeight: "100vh"}}
         >
           <NavLink to="/">Back to Dashboard</NavLink>
         </div>
@@ -83,7 +83,7 @@ export default function Leads() {
                 <div className="card mb-3">
                   <div
                     className="card-header"
-                    style={{ backgroundColor: "#e3f2fd" }}
+                    style={{ backgroundColor: "#bbdefb" }}
                   >
                     <p>{lead.name}</p>
                   </div>

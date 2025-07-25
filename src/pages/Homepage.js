@@ -10,6 +10,7 @@ import Headers from "../components/Header";
 export default function Homepage() {
   const dispatch = useDispatch();
   const [showValue, setShowValue] = useState(false);
+  const [selectedStatus, setSelectedStatus] = useState("All");
   const { leads, status, error } = useSelector((state) => state.leads);
   const filteredLeads = useSelector((state) => state.leads.filteredLeads);
   const [allLead, setAllLead] = useState([]);
@@ -19,24 +20,32 @@ export default function Homepage() {
   }, [showValue]);
 
   useEffect(() => {
-    if (filteredLeads && filteredLeads.length > 0) {
+    if(selectedStatus === "All"){
+      setAllLead(leads)
+    }else{
       setAllLead(filteredLeads);
-    } else {
-      setAllLead(leads);
     }
-  }, [filteredLeads, leads]);
+  }, [filteredLeads, leads, selectedStatus]);
+
+  const handleRadioButton =(value)=>{
+    setSelectedStatus(value)
+    if(value === "All"){
+      setAllLead(leads);
+    }else{
+      dispatch(filterdLead(value))
+    }
+  }
 
   return (
     <>
-      <div className="h-screen flex flex-col items-center" style={{height:"100vh"}}>
+      <div className="h-screen flex flex-col items-center">
         <div className="row">
           <div
             className="col-md-3 col-lg-3 px-5 py-2"
             style={{ backgroundColor: "#bbdefb", 
-
+              height: "100vh",
               top: 0,
-              overflowY: "auto", 
-            }}
+              overflowY: "auto", }}
           >
             <Sidebar />
           </div>
@@ -57,21 +66,28 @@ export default function Homepage() {
                 <input
                   type="radio"
                   name="status"
-                  onChange={() => setAllLead(leads)}
+                  value="All"
+                  checked={selectedStatus === "All"}
+                  onChange={(e) => handleRadioButton(e.target.value)}
+                    
                 />{" "}
                 All
                 <br />
                 <input
                   type="radio"
                   name="status"
-                  onChange={() => dispatch(filterdLead("New"))}
+                  checked={selectedStatus === "New"}
+                  onChange={(e) =>handleRadioButton(e.target.value) }
+                  value="New"
                 />{" "}
                 New
                 <br />
                 <input
                   type="radio"
                   name="status"
-                  onChange={() => dispatch(filterdLead("Contacted"))}
+                  onChange={(e) =>handleRadioButton(e.target.value)}
+                  checked={selectedStatus === "Contacted"}
+                value="Contacted"
                 />{" "}
                 Contacted
                 <br />
@@ -88,7 +104,7 @@ export default function Homepage() {
                     >
                       <div
                         className="card mb-3"
-                        style={{ backgroundColor: "#e3f2fd", border: "none" }}
+                        style={{ backgroundColor: "#bbdefb", border: "none" }}
                       >
                         <div className="card-body">
                           <p className="">Name: {lead.name}</p>

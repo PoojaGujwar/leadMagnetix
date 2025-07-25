@@ -65,11 +65,11 @@ export default function Reports() {
 
 
   return (
-    <div style={{height:"100vh"}}>
+    <div style={{minHeight: "100vh"}}>
       <div className="row">
         <div
           className="col-md-3 col-lg-3 px-5 py-2"
-          style={{backgroundColor:"#bbdefb",height: ""}}
+          style={{backgroundColor:"#bbdefb", minHeight: "100vh"}}
         >
           <NavLink to="/">Back to Dashboard</NavLink>
         </div>

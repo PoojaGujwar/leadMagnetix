@@ -26,9 +26,9 @@ if(value === "All"){
  }
 }
   return (
-    <div style={{height:"100vh"}}>
+    <div style={{minHeight: "100vh"}}>
       <div className="row">
-        <div className="col-md-3 col-lg-3 px-5 py-2" style={{backgroundColor:"#bbdefb"}}><NavLink to="/">Back to Dashboard</NavLink></div>
+        <div className="col-md-3 col-lg-3 px-5 py-2" style={{backgroundColor:"#bbdefb", minHeight: "100vh"}}><NavLink to="/">Back to Dashboard</NavLink></div>
         <div className="col-md-8 py-2">
           <h1 className="text-center"> Sales Agent View </h1>
           <h5 className="mt-4">Lead List by Agent</h5>
