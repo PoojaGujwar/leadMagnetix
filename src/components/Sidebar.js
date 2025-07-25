@@ -3,7 +3,6 @@ import {Link} from "react-router-dom"
 export default function Sidebar(){
     return(
         <div>
-         
         <ul className="" >
                     <li className="list-group-item py-2"><Link to="/" className="nav-link">Home</Link></li>
                     <li className="list-group-item py-2"><Link to="/leads" className="nav-link">Leads</Link></li>
