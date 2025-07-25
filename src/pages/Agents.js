@@ -17,7 +17,7 @@ export default function Agents() {
       
       <div className="row">
         <div
-        className="col-md-3 col-lg-3 px-5 py-3" style={{backgroundColor:"#bbdefb",height: "100vh"}}
+        className="col-md-3 col-lg-3 px-5 py-3" style={{backgroundColor:"#bbdefb",minHeight: "100vh"}}
         >
           <NavLink to="/">Back to Dashboard</NavLink>
         </div>

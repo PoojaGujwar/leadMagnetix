@@ -38,7 +38,7 @@ export default function Homepage() {
 
   return (
     <>
-      <div className="h-screen flex flex-col items-center" style={{height:"100vh"}}>
+      <div className="h-screen flex flex-col items-center" style={{minHeight: "100vh"}}>
         <div className="row">
           <div
             className="col-md-3 col-lg-3 px-5 py-2"
